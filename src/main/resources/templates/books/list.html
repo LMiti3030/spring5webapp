@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- xmlns:th="http://www.thymeleaf.org" - thymeleaf extensions will be added-->
+<head>
+    <meta charset="UTF-8">
+    <title>Spring5webapp - Books</title>
+</head>
+<body>
+<h1>Book List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Publisher</th>
+    </tr>
+<!--    asking the model attributes books for books
+    iterator over books
+    for each book thymeleaf will render the elements-->
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}">123</td>
+        <td th:text="${book.title}">Spring in Action</td>
+        <td th:text="${book.publisher.name}">Wrox</td>
+    </tr>
+</table>
+
+</body>
+</html>
